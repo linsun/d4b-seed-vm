@@ -1,11 +1,6 @@
 # Softlayer credentials
-variable ibmid {}
-variable ibmid_password {}
-
-# Empty string defaults to the Bluemix default account
-variable softlayer_account_number {
-    default=""
-}
+variable softlayer_username {}
+variable softlayer_api_key {}
 
 # Number of workers to deploy
 variable worker_count {
@@ -27,7 +22,7 @@ variable datacenter {
     default = "dal10"
 }
 
-# Name substring to identify the manager
+# Swarm name; workers and managers have this prefix
 variable name {
     default = "D4B"
 }
@@ -46,4 +41,24 @@ variable logging_level {
 # Image used for deployment
 variable infrakit_image {
     default = ""
+}
+
+# Load Balancer IP address
+variable lb_ip {
+    default = ""
+}
+
+# Load Balancer Vlan ID
+variable lb_vlanid {
+    default = 0
+}
+
+# Load Balancer Private Vlan ID
+variable lb_vlanid_private {
+    default = 0
+}
+
+# Number of Load Balancer workers
+variable lb_count {
+    default = 0
 }
